@@ -41,7 +41,13 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+	
+   <dependency>
+     <groupId>com.haoxuer.discover</groupId>
+     <artifactId>discover-question</artifactId>
+     <version>3.3.18-20230117</version>
+   </dependency>
+ </dependencies>
 
 	<build>
 		<plugins>
