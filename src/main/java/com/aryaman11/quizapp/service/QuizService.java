@@ -14,6 +14,8 @@ import com.aryaman11.quizapp.dao.QuizDao;
 import com.aryaman11.quizapp.model.Question;
 import com.aryaman11.quizapp.model.QuestionWrapper;
 import com.aryaman11.quizapp.model.Quiz;
+import com.aryaman11.quizapp.model.Response;
+
 import java.util.Optional;
 
 @Service
@@ -53,5 +55,22 @@ public class QuizService {
         } 
         return new ResponseEntity<>(questionForUsers,HttpStatus.OK);
     }
+
+    public ResponseEntity<Integer> calResult(Integer id, List<Response> response) {
+    Optional<Quiz> optionalQuiz = quizDao.findById(id);
+   
+
+    Quiz quiz = optionalQuiz.get();
+    List<Question> questions = quiz.getQuestion();
+    int right = 0;
+    int i = 0;
+    for (Response r : response) {
+        if (r.getResponse().equals(questions.get(i).getRight_answer())) {
+            right++;
+        }
+        i++;
+    }
+    return new ResponseEntity<>(right, HttpStatus.OK);
+}
 
 }
