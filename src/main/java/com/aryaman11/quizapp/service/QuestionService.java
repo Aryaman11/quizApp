@@ -1,6 +1,7 @@
 package com.aryaman11.quizapp.service;
-import com.aryaman11.quizapp.Question;
 import com.aryaman11.quizapp.dao.QuestionDao;
+import com.aryaman11.quizapp.model.Question;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.HttpStatus;
